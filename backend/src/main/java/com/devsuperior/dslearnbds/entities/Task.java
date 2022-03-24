@@ -8,24 +8,20 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_task")
-public class Task extends Lesson{
-
+public class Task extends Lesson {
 	private static final long serialVersionUID = 1L;
-	
+
 	private String description;
 	private Integer questionCount;
 	private Integer approvalCount;
 	private Double weight;
 	
-	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
+	@Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")	
 	private Instant dueDate;
 	
 	public Task() {
-		
 	}
 
-	/*Aqui foi colocado também os atributos do Lesson.
-	 Selecionado Lesson('seus atributos') em "Select super constructor to invoke:" */
 	public Task(Long id, String title, Integer position, Section section, String description, Integer questionCount,
 			Integer approvalCount, Double weight, Instant dueDate) {
 		super(id, title, position, section);
@@ -75,6 +71,4 @@ public class Task extends Lesson{
 	public void setDueDate(Instant dueDate) {
 		this.dueDate = dueDate;
 	}
-	
-	// Pode ser que não precise colocar "HashCode e Equals" na classe herdada.
 }
