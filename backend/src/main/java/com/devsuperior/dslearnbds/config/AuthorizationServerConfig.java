@@ -35,7 +35,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 	
-	@Autowired 
+	@Autowired
 	private JwtAccessTokenConverter accessTokenConverter;
 	
 	@Autowired
@@ -48,17 +48,15 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 	private JwtTokenEnhancer tokenEnhancer;
 	
 	@Autowired
-	private UserDetailsService userDetailsService ;
+	private UserDetailsService userDetailsService;
 	
-		
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-		security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated");
+		security.tokenKeyAccess("permitAll()").checkTokenAccess("isAuthenticated()");
 	}
 
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
-		
 		clients.inMemory()
 		.withClient(clientId)
 		.secret(passwordEncoder.encode(clientSecret))
@@ -80,6 +78,4 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 		.tokenEnhancer(chain)
 		.userDetailsService(userDetailsService);
 	}
-
-	
 }

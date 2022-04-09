@@ -9,11 +9,10 @@ public class OAuthCustomError implements Serializable {
 
 	private String error;
 	
-	@JsonProperty("error_description") //passa para snake case no json
+	@JsonProperty("error_description")
 	private String errorDescription;
 	
 	public OAuthCustomError() {
-		
 	}
 
 	public OAuthCustomError(String error, String errorDescription) {
@@ -37,5 +36,4 @@ public class OAuthCustomError implements Serializable {
 	public void setErrorDescription(String errorDescription) {
 		this.errorDescription = errorDescription;
 	}
-	
 }

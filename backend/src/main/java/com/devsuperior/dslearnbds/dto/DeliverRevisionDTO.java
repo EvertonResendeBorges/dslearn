@@ -6,13 +6,12 @@ import com.devsuperior.dslearnbds.entities.enums.DeliverStatus;
 
 public class DeliverRevisionDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	private DeliverStatus status;
 	private String feedback;
 	private Integer correctCount;
 	
 	public DeliverRevisionDTO() {
-		
 	}
 
 	public DeliverRevisionDTO(DeliverStatus status, String feedback, Integer correctCount) {
@@ -45,7 +44,4 @@ public class DeliverRevisionDTO implements Serializable {
 	public void setCorrectCount(Integer correctCount) {
 		this.correctCount = correctCount;
 	}
-	
-	
-
 }

@@ -16,7 +16,6 @@ public class NotificationDTO implements Serializable {
 	private Long userId;
 	
 	public NotificationDTO() {
-		
 	}
 
 	public NotificationDTO(Long id, String text, Instant moment, boolean read, String route, Long userId) {
@@ -84,6 +83,4 @@ public class NotificationDTO implements Serializable {
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-	
-	
 }

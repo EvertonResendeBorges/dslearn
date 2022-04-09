@@ -4,15 +4,14 @@ import java.io.Serializable;
 
 import com.devsuperior.dslearnbds.entities.User;
 
-public class UserDTO implements Serializable {	
+public class UserDTO implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	private Long id;
 	private String name;
 	private String email;
 	
 	public UserDTO() {
-		
 	}
 
 	public UserDTO(Long id, String name, String email) {
@@ -50,5 +49,4 @@ public class UserDTO implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	
 }
